@@ -1,5 +1,6 @@
 import "./globals.css"
 import { Pangolin } from "next/font/google"
+import NavBar from "@/components/NavBar"
 
 const pangolin = Pangolin({ subsets: ["latin"], weight: ["400"] })
 
@@ -10,8 +11,11 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
 	return (
-		<html lang="en" className="bg-green-200">
-			<body className={pangolin.className}>{children}</body>
+		<html lang="en" className="bg-lime-200">
+			<body className={pangolin.className}>
+				<NavBar />
+				{children}
+			</body>
 		</html>
 	)
 }
