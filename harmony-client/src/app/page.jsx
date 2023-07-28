@@ -1,11 +1,20 @@
-import Image from "next/image"
-import HarmonyLogo from "../images/logo.svg"
+import "@/styles/home.css"
+import Intro from "@/components/home/Intro/Intro"
+import Explore from "@/components/home/Explore/Explore"
+import Arrow from "@/components/home/Arrow"
+import Team from "@/components/home/Team/Team"
+import Quote from "@/components/home/Quote/Quote"
 
 export default function Home() {
 	return (
-		<div className="w-full mt-40 flex flex-col items-center">
-			<Image src={HarmonyLogo} />
-			<p className="text-4xl">Control your mind, control yourself!</p>
-		</div>
+		<main>
+			<Intro />
+			<Explore />
+			<Team />
+			<Quote />
+
+			{/* Bouncing arrow (indicating unread info) */}
+			<Arrow />
+		</main>
 	)
 }
