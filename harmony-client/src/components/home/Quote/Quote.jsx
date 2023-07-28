@@ -5,8 +5,21 @@ import { Kalam, Quicksand } from "next/font/google"
 const kalam = Kalam({ subsets: ["latin"], weight: ["700"] })
 const quicksand = Quicksand({ subsets: ["latin"], weight: ["400"] })
 
-const url = "https://therapybypro.com/best-mental-health-quotes/"
-async function scrape() {
+export default async function Quote() {
+	const { quote, author } = await getRandomQuote()
+	return (
+		<main className="px-[15%] py-40 flex flex-col gap-2 items-end text-center">
+			<h1 className={`${kalam.className} text-5xl italic text-lime-700`}>
+				❝{quote}❞
+			</h1>
+			<h3 className={`${quicksand.className} text-2xl`}>- {author} -</h3>
+		</main>
+	)
+}
+
+// Scrape a website for mental health quote
+async function getRandomQuote() {
+	const url = "https://therapybypro.com/best-mental-health-quotes/"
 	const data = []
 	try {
 		// Fetch data from a (nice) website
@@ -37,16 +50,4 @@ async function scrape() {
 	} catch (e) {
 		console.error(e)
 	}
-}
-
-export default async function Quote() {
-	const { quote, author } = await scrape()
-	return (
-		<main className="px-[15%] py-40 flex flex-col gap-2 items-end text-center font-sans font-bold">
-			<h1 className={`${kalam.className} text-5xl italic text-lime-700`}>
-				❝{quote}❞
-			</h1>
-			<h3 className={`${quicksand.className} text-2xl`}>- {author} -</h3>
-		</main>
-	)
 }

@@ -20,10 +20,10 @@ export default function Intro() {
 					molestias itaque animi dignissimos unde, voluptatem
 				</p>
 				<section className={`flex gap-5 pt-2 ${vietnam_pro.className}`}>
-					<button className="shadow-lg py-3 px-6 rounded-full bg-[#A6DE9B] text-lime-900 hover:bg-lime-800 hover:text-white  transition-all duration-75">
+					<button className="shadow-lg py-3 px-6 rounded-full bg-[#A6DE9B] text-lime-900 hover:bg-lime-800 hover:text-white transition-all duration-75">
 						Chat with AI Doctor
 					</button>
-					<button className="shadow-lg py-3 px-6 rounded-full border-2 bg-blue-300 text-blue-900 hover:bg-blue-900 hover:text-white  transition-all duration-75">
+					<button className="shadow-lg py-3 px-6 rounded-full border-2 bg-blue-300 text-blue-900 hover:bg-blue-900 hover:text-white transition-all duration-75">
 						Join the forum
 					</button>
 				</section>

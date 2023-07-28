@@ -7,6 +7,7 @@ import { motion } from "framer-motion"
 const caveat = Caveat({ subsets: ["latin"], weight: ["700"] })
 const quicksand = Quicksand({ subsets: ["latin"], weight: ["500"] })
 
+// Animation + Orchestration (Delay)
 const cardVariants = {
 	hidden: { opacity: 0, scale: 0 },
 	inView: (order) => ({
