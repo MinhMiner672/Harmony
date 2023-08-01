@@ -1,7 +1,7 @@
 import "@/styles/home.css"
-import { Intro, Explore, Arrow, Team, Quote } from "@/components/home"
+import { Intro, Explore, BouncingArrow, Team, Quote } from "@/components/home"
 
-export default function Home() {
+export default async function Home() {
 	return (
 		<main>
 			<Intro />
@@ -10,7 +10,7 @@ export default function Home() {
 			<Quote />
 
 			{/* Bouncing arrow (indicating unread info) */}
-			<Arrow />
+			<BouncingArrow />
 		</main>
 	)
 }

@@ -1,10 +1,16 @@
-import { Be_Vietnam_Pro } from "next/font/google"
+import { getServerSession } from "next-auth"
+import { Raleway } from "next/font/google"
+
 import Image from "next/image"
 import Link from "next/link"
+import UserAvt from "./UserAvt"
+import authConfiguration from "@/app/lib/authConfig"
 
-const vietnam_pro = Be_Vietnam_Pro({ subsets: ["latin"], weight: ["600"] })
+const raleway = Raleway({ subsets: ["latin"], weight: ["700"] })
 
-export default function NavBar() {
+export default async function NavBar() {
+	const session = await getServerSession(authConfiguration)
+
 	return (
 		<nav className="bg-white fixed top-0 w-full flex justify-around items-center shadow-lg py-3 z-50">
 			<Link href="#">
@@ -16,7 +22,7 @@ export default function NavBar() {
 				/>
 			</Link>
 			<section
-				className={`flex items-center gap-7 text-lime-800 ${vietnam_pro.className}`}
+				className={`flex items-center gap-7 text-lime-800 ${raleway.className}`}
 			>
 				<NavLink _href="#">Forum</NavLink>
 				<NavLink _href="#">Library</NavLink>
@@ -24,14 +30,7 @@ export default function NavBar() {
 				<NavLink _href="#">Minigames</NavLink>
 				<NavLink _href="#">Contact</NavLink>
 			</section>
-			<button
-				className={
-					"border-2 text-lime-800 border-lime-800 rounded-full px-5 py-1 hover:text-white hover:bg-lime-800 transition-all " +
-					vietnam_pro.className
-				}
-			>
-				Sign Up
-			</button>
+			<UserAvt nextAuthSession={session} />
 		</nav>
 	)
 }

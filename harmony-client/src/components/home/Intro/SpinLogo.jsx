@@ -10,9 +10,9 @@ export default function SpinLogo() {
 			transition={{ type: "spring", duration: 3, repeat: Infinity }}
 		>
 			<Image
-				src="/images/icon_logo.png"
+				src="/images/logo/harmony_icon.png"
 				className="select-none"
-				width={1000}
+				width={700}
 				height={100}
 			/>
 		</motion.div>

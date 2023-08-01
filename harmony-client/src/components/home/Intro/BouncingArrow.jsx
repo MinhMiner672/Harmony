@@ -1,10 +1,9 @@
 "use client"
 
 import { useEffect } from "react"
-import { motion } from "framer-motion"
 import Image from "next/image"
 
-export default function Arrow() {
+export default function BouncingArrow() {
 	useEffect(() => {
 		window.onscroll = () => {
 			const arrowImg = document.querySelector(".arrow-img")
