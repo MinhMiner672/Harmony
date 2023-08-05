@@ -10,5 +10,8 @@ module.exports = {
 			backgroundImage: {},
 		},
 	},
-	plugins: [],
+	plugins: [require("daisyui")],
+	daisyui: {
+		themes: ["light"],
+	},
 }

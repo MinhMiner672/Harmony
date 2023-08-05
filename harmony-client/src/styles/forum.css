@@ -1,0 +1,3 @@
+#editable-input-box {
+	content: attr(data-placeholder);
+}

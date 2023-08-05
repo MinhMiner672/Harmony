@@ -1,4 +1,5 @@
 import "./tailwind.css"
+import Provider from "./context/AuthContext"
 import { Pangolin } from "next/font/google"
 import NavBar from "@/components/NavBar"
 import Footer from "@/components/Footer"
@@ -13,10 +14,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
 	return (
 		<html lang="en">
-			<body className={`${pangolin.className} h-screen`}>
-				<NavBar />
-				{children}
-				<Footer />
+			<body className={`h-screen`}>
+				<Provider>
+					<NavBar />
+					{children}
+					<Footer />
+				</Provider>
 			</body>
 		</html>
 	)
