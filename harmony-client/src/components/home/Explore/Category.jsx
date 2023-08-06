@@ -18,7 +18,13 @@ const categoryVariants = {
 	}),
 }
 
-export default function Category({ name, imgFileName, order, bgColor }) {
+export default function Category({
+	name,
+	imgFileName,
+	order,
+	bgColor,
+	redirect,
+}) {
 	const imgPath = `/images/explore/${imgFileName}.png`
 
 	return (
@@ -29,7 +35,7 @@ export default function Category({ name, imgFileName, order, bgColor }) {
 			viewport={{ once: true }}
 			custom={order}
 		>
-			<Link href="#" className="flex flex-col items-center gap-2">
+			<Link href={redirect} className="flex flex-col items-center gap-2">
 				<motion.img
 					whileHover={{ scale: 1.1, rotate: 10 }}
 					transition={{ type: spring, duration: 0.1 }}

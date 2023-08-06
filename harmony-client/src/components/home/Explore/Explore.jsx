@@ -19,34 +19,39 @@ export default function Explore() {
 			{/* List of categories */}
 			<ul className="flex flex-wrap items-center gap-10">
 				<Category
-					name="Minigame"
+					name="Minigames"
 					imgFileName="joystick"
 					order={1}
 					bgColor="bg-red-400"
+					redirect="/minigames"
 				/>
 				<Category
 					name="Library"
 					imgFileName="light_bulb"
 					order={2}
 					bgColor="bg-lime-500"
+					redirect="#"
 				/>
 				<Category
 					name="Emotion Diary"
 					imgFileName="diary"
 					order={3}
 					bgColor="bg-blue-400"
+					redirect="/coming-soon"
 				/>
 				<Category
 					name="AI Doctor"
 					imgFileName="ai_doctor"
 					order={4}
 					bgColor="bg-yellow-300"
+					redirect="/coming-soon"
 				/>
 				<Category
 					name="Forum"
 					imgFileName="community"
 					order={5}
 					bgColor="bg-purple-400"
+					redirect="/forum"
 				/>
 			</ul>
 		</main>

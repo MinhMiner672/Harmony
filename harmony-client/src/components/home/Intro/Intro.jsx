@@ -1,9 +1,10 @@
 import { Solitreo, Quicksand, Be_Vietnam_Pro } from "next/font/google"
 import SpinLogo from "./SpinLogo"
+import Link from "next/link"
 
 const solitreo = Solitreo({ subsets: ["latin"], weight: ["400"] })
 const quicksand = Quicksand({ subsets: ["latin"], weight: ["400"] })
-const vietnam_pro = Be_Vietnam_Pro({ subsets: ["latin"], weight: ["600"] })
+const vietnam_pro = Be_Vietnam_Pro({ subsets: ["latin"], weight: ["500"] })
 
 export default function Intro() {
 	return (
@@ -20,12 +21,18 @@ export default function Intro() {
 					journey.
 				</p>
 				<section className={`flex gap-5 pt-2 ${vietnam_pro.className}`}>
-					<button className="shadow-lg py-3 px-6 rounded-full bg-[#A6DE9B] text-lime-900 hover:bg-lime-800 hover:text-white transition-all duration-75">
+					<Link
+						href="/coming-soon"
+						className="hover:cursor-pointer shadow-lg py-3 px-6 rounded-full bg-[#A6DE9B] text-lime-900 hover:bg-lime-800 hover:text-white transition-all duration-75"
+					>
 						Chat with AI Doctor
-					</button>
-					<button className="shadow-lg py-3 px-6 rounded-full border-2 bg-blue-300 text-blue-900 hover:bg-blue-900 hover:text-white transition-all duration-75">
+					</Link>
+					<Link
+						href="/forum"
+						className="hover:cursor-pointer shadow-lg py-3 px-6 rounded-full  bg-blue-300 text-blue-900 hover:bg-blue-900 hover:text-white transition-all duration-75"
+					>
 						Join the forum
-					</button>
+					</Link>
 				</section>
 			</article>
 			<SpinLogo />

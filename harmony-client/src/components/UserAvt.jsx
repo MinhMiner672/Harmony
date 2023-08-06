@@ -10,7 +10,7 @@ import { useRef, useEffect } from "react"
 const quicksand = Quicksand({ subsets: ["latin"], weight: ["400"] })
 const vietnam_pro = Be_Vietnam_Pro({ subsets: ["latin"], weight: ["600"] })
 
-export default function UserAvt({ nextAuthSession }) {
+export default function UserAvt({ nextAuthServerSession }) {
 	const handleSignIn = () => signIn("google")
 	const handleSignOut = () => signOut()
 
@@ -20,10 +20,10 @@ export default function UserAvt({ nextAuthSession }) {
 	return (
 		<div>
 			{/* Signed in (Show Avatar) */}
-			{nextAuthSession?.user && (
+			{nextAuthServerSession?.user && (
 				<>
 					<Image
-						src={nextAuthSession.user.image}
+						src={nextAuthServerSession.user.image}
 						width={40}
 						height={40}
 						className="rounded-full mx-7 hover:cursor-pointer"
@@ -66,7 +66,7 @@ export default function UserAvt({ nextAuthSession }) {
 			)}
 
 			{/* Not signed in (Show sign In Button) */}
-			{!nextAuthSession && (
+			{!nextAuthServerSession && (
 				<button
 					onClick={handleSignIn}
 					className={
