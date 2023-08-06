@@ -38,7 +38,7 @@ $ npm run dev # Start the web
 
 ## Firebase Configuration
 
-Since the project uses [**Cloud Firestore**](https://firebase.google.com/docs/firestore?hl=vi) as the main database, it is recommended that you [create your own Firebase App](https://firebase.google.com/docs/firestore/quickstart?hl=en) and copy paste its [config code](https://support.google.com/firebase/answer/7015592#zippy=%2Cin-this-article) into [**firebaseUtils.js**](https://github.com/MinhMiner672/Harmony/blob/main/harmony-client/src/app/lib/firebaseUtils.js)
+Since the project uses [**Cloud Firestore**](https://firebase.google.com/docs/firestore?hl=vi) as the main database, it is recommended that you [create your own Firebase App](https://firebase.google.com/docs/firestore/quickstart?hl=en) and copy paste its [config code](https://support.google.com/firebase/answer/7015592#zippy=%2Cin-this-article) into [**firebaseUtils.js**](https://github.com/MinhMiner672/Harmony/blob/main/harmony-client/src/app/lib/firebaseUtils.js), after that, create a **collection** in the Firebase console named `forum-data`
 
 ```js
 // firebaseUtils.js
