@@ -8,7 +8,6 @@ export default function Home() {
 			<Explore />
 			<Team />
 			<Quote />
-			<BouncingArrow />
 		</main>
 	)
 }

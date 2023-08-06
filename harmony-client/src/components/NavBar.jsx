@@ -24,11 +24,11 @@ export default async function NavBar() {
 			<section
 				className={`flex items-center gap-7 text-lime-800 ${raleway.className}`}
 			>
-				<NavLink _href="#">Forum</NavLink>
+				<NavLink _href="/forum">Forum</NavLink>
 				<NavLink _href="#">Library</NavLink>
-				<NavLink _href="#">AI Doctor</NavLink>
-				<NavLink _href="#">Minigames</NavLink>
-				<NavLink _href="#">Contact</NavLink>
+				<NavLink _href="/coming-soon">AI Doctor</NavLink>
+				<NavLink _href="/minigames">Minigames</NavLink>
+				<NavLink _href="#footer">Contact</NavLink>
 			</section>
 			<UserAvt nextAuthServerSession={session} />
 		</nav>

@@ -5,7 +5,11 @@ import { useSession } from "next-auth/react"
 import { onSnapshot, collection } from "firebase/firestore"
 import { database } from "../lib/firebaseUtils"
 
-import { Post, NewPost, ForumLoadingUI, PostFilter } from "@/components/forum"
+import { ForumLoadingUI, PostArea } from "@/components/forum"
+
+import { Be_Vietnam_Pro } from "next/font/google"
+
+const vietnam_pro = Be_Vietnam_Pro({ subsets: ["latin"], weight: ["700"] })
 
 export const FilterContext = createContext(null)
 
@@ -28,38 +32,26 @@ export default function Forum() {
 	}, [])
 
 	return (
-		<FilterContext.Provider
-			value={{ filterTagsSelected, setFilterTagsSelected }}
-		>
-			<main className="mt-32 mb-44 flex flex-col gap-5 items-center">
-				{session.status === "loading" && <ForumLoadingUI />}
-
-				{session.status === "authenticated" && <NewPost />}
-				{session.status === "authenticated" && <PostFilter />}
-
-				{posts.map((post) => {
-					const {
-						title,
-						content,
-						author,
-						gmail,
-						avtURL,
-						tags,
-						order,
-					} = post
-					return (
-						<Post
-							title={title}
-							content={content}
-							author={author}
-							gmail={gmail}
-							avtURL={avtURL}
-							tags={tags}
-							order={order}
-						/>
-					)
-				})}
-			</main>
-		</FilterContext.Provider>
+		<>
+			{session.status === "loading" && <ForumLoadingUI />}
+			{session.status === "unauthenticated" && (
+				<h1 className="text-4xl h-full w-full flex items-center justify-center">
+					Please{" "}
+					<span
+						className={`px-2 text-lime-700 underline ${vietnam_pro.className}`}
+					>
+						Sign In
+					</span>{" "}
+					to use this service
+				</h1>
+			)}
+			{session.status === "authenticated" && (
+				<FilterContext.Provider
+					value={{ filterTagsSelected, setFilterTagsSelected }}
+				>
+					<PostArea posts={posts} session={session} />
+				</FilterContext.Provider>
+			)}
+		</>
 	)
 }
