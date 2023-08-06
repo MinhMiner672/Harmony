@@ -4,5 +4,14 @@ import Post from "./Post/Post"
 import NewPost from "./NewPostModal/NewPostBtn"
 import ForumLoadingUI from "./Loading"
 import PostFilter from "./PostFilter"
+import PostArea from "./PostArea"
 
-export { CommentBtn, LikeBtn, Post, NewPost, ForumLoadingUI, PostFilter }
+export {
+	CommentBtn,
+	LikeBtn,
+	Post,
+	NewPost,
+	ForumLoadingUI,
+	PostFilter,
+	PostArea,
+}

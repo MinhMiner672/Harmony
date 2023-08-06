@@ -66,9 +66,7 @@ export default function CommentBtn({ author, postOrderID }) {
 					className="modal-box w-10/12 max-w-3xl flex flex-col items-center gap-3 bg-gray-50"
 					onSubmit={submitComment}
 				>
-					<h3 className="font-bold text-2xl">
-						{author}'s Post with order {postOrderID}
-					</h3>
+					<h3 className="font-bold text-2xl">{author}'s Post</h3>
 					<main className="w-full px-10 flex flex-col gap-3 z-0">
 						{/* Text area */}
 						<section className="w-full h-[23rem] px-3 py-5 overflow-y-scroll flex flex-col gap-3 border-2 bg-white border-gray-200 shadow-md">
